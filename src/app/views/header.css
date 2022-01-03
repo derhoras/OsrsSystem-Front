@@ -1,11 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
-@font-face {
+﻿@font-face {
     font-family: YourFontFamily;
     src: url("/assets/font/yourFont.ttf") format("truetype");
 }
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
-header{
+.header-div{
     font-family: YourFontFamily;
     font-size: 20px;
+}
+
+
+.header-div {
+    background-color: 	#CBC3E3;
+    padding: 20px;
+    margin: 0;
+}
+.navbar-light {
+    background-color: 	#CBC3E3;
+}
+a.navbar-brand {
+    font-family: "Audiowide", sans-serif;
 }

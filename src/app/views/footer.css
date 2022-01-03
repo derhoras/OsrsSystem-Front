@@ -1,0 +1,30 @@
+﻿/* .footer-div { */
+/*     background-color: skyblue; */
+/*     padding: 20px; */
+/*     /* margin: 0; !1! */
+/*     position: absolute; */
+/*     width: 100%; */
+/*     bottom: 0; */
+/*     height: 60px; */
+/* } */
+@font-face {
+    font-family: YourFontFamily;
+    src: url("/assets/font/yourFont.ttf") format("truetype");
+}
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+h5{
+    font-family: YourFontFamily;
+    font-size: 20px;
+    text-align: center;
+   
+}
+
+.footer {
+    background-color: 	#CBC3E3;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+}

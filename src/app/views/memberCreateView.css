@@ -1,0 +1,19 @@
+﻿ label {
+    background-color: rgba(206, 159, 245, 0.85);
+  }
+  
+tr:nth-child(even) {
+    background-color: #CBC3E3;
+  }
+
+  tr:nth-child(odd) {
+    background-color: rgba(206, 159, 245, 0.85);
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+  body{
+      font-family: "Oxygen", Arial, Helvetica, sans-serif;
+      font-size: 20px;
+  }
+ 

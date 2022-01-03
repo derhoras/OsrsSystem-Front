@@ -1,0 +1,29 @@
+﻿<h3 class="listName">Member list</h3>
+<div class="row">
+    <table class="table table-striped table-hover table-md">
+        <thead>
+            <tr>
+                <th scope="col">Player ID</th>
+                <th scope="col">Nickname</th>
+                <th scope="col">Goal</th>
+                <th scope="col">ClanId</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of clanService.members">
+                <td>{{t.id}}</td>
+                <td>{{t.nickname}}</td>
+                <td>{{t.goal}}</td>
+                <td>{{t.clanId}}</td>
+                <!--<button [routerLink]="['/clans/' , '2', '/members/' , t.id , '/edit']" routerLinkActive="active" class="btn btn-outline-info btn-sm">Edit</button> -->
+                <button [routerLink]="['/membersedit/2']" routerLinkActive="active" class="btn btn-outline-info btn-sm">Edit</button>
+                <button (click)="onDelete(t.clanId, t.id)" class="btn btn-outline-danger btn-sm">Delete</button> 
+                <a class="nav-link" href="/clans/2/members/2/posts">Posts <span class="sr-only"></span></a> 
+                <!--<button [routerLink]="['/clans/' , t.clanId , '/memberCreate']" routerLinkActive="active" class="btn btn-outline-info btn-sm">Create</button> -->
+                
+            </tr>
+        </tbody>
+    </table>
+    <button *ngIf="authService.isLoggedIn() && authService.getRole()!.includes('Admin')" type="button" class="btn btn-info" [routerLink]="['/memberCreate']" routerLinkActive="active">Create new member</button>
+</div>

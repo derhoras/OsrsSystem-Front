@@ -1,0 +1,20 @@
+﻿<style>
+    label {
+     background-color: rgba(206, 159, 245, 0.85);
+   }
+     </style>
+<div class="row">
+    <form (submit)="onMemberUpdate()">
+        <div class="form-group">
+            <label for="clanName">Edit member nickname</label>
+            <input type="text" class="form-control" name="memberNickname" #memberNickname="ngModel" [(ngModel)]="memberItem.nickname" required>
+        </div>
+		<div class="form-group">
+            <label for="memberGoal">Goal</label>
+            <input type="text" class="form-control" name="memberGoal" #memberGoal="ngModel" [(ngModel)]="memberGoal.name" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" value="Update">Update</button>
+        </div>
+    </form>
+</div>

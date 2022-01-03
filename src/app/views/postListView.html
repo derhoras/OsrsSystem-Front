@@ -1,0 +1,25 @@
+﻿
+
+
+<div class="row">
+    <table class="table table-striped table-hover table-md" *ngIf="clanService">
+        <thead>
+            <tr>
+                <th scope="col">Header</th>
+                <th scope="col">Body</th>
+                <th scope="col">Option</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of clanService.posts" class="clickable" role="button" [routerLink]="['/clans', '2', '/members','2','/posts']">
+                <td>{{t.header}}</td>
+                <td>{{t.body}}</td>
+                <td>
+                
+                <button *ngIf="authService.isLoggedIn() && authService.getRole()!.includes('Admin')" (click)="onDelete(t.memberId,t.id)" class="btn btn-outline-danger btn-sm">Delete</button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

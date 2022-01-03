@@ -1,0 +1,16 @@
+﻿<style>
+    label {
+     background-color: rgba(206, 159, 245, 0.85);
+   }
+     </style>
+<div class="row">
+    <form (submit)="onClanUpdate()">
+        <div class="form-group">
+            <label for="clanName">Edit Clan name</label>
+            <input type="text" class="form-control" name="clanName" #clanName="ngModel" [(ngModel)]="clanItem.name" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" value="Update">Update</button>
+        </div>
+    </form>
+</div>

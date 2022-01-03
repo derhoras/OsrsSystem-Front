@@ -1,0 +1,23 @@
+﻿<div class="main">
+    <div class="col-md-4 col-sm-12">
+        <div class="login-form">
+            <form (ngSubmit)="onLogin('buttonType')">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" #username="ngModel" [(ngModel)]="creds.username" required>
+                    <div class="text-danger" *ngIf="username.touched && username.invalid">Required</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="creds.password" required>
+                    <div class="text-danger" *ngIf="password.touched && password.invalid">Required</div>
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger"> {{errorMessage}} </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-black" (click)="onLogin('Login')" [disabled]="username.invalid || password.invalid" >Login</button>
+                    <button type="submit" class="btn btn-secondary" (click)="onLogin('Register')" [disabled]="username.invalid || password.invalid">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

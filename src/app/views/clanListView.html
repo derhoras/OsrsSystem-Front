@@ -1,0 +1,30 @@
+﻿
+
+
+<div class="row">
+    <table class="table table-striped table-hover table-md" *ngIf="clanService">
+        <thead>
+            <tr>
+                <th scope="col">Clan name</th>
+                <th scope="col">Clan description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of clanService.clans" class="clickable" role="button" [routerLink]="['/clans', t.id, 'members']">
+                <td>{{t.name}}</td>
+                <td>{{t.description}}</td>
+                <td>{{t.type}}</td>
+                <td>
+                <!--     <button  [routerLink]="['/edit', t.id]" routerLinkActive="active" class="btn btn-outline-info btn-sm">Edit</button> -->
+                <!--     <button  (click)="onDelete(t.id)" class="btn btn-outline-danger btn-sm">Delete</button> -->
+                <button *ngIf="authService.isLoggedIn() && authService.getRole()!.includes('Admin')" [routerLink]="['/edit', t.id]" routerLinkActive="active" class="btn btn-outline-info btn-sm">Edit</button>
+                <button *ngIf="authService.isLoggedIn() && authService.getRole()!.includes('Admin')" (click)="onDelete(t.id)" class="btn btn-outline-danger btn-sm">Delete</button> 
+                <button  [routerLink]="['clans/', t.id, '/members']" routerLinkActive="active" class="btn btn-outline-dark btn-sm">Members</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button *ngIf="authService.isLoggedIn() && authService.getRole()!.includes('Admin')" type="button" class="btn btn-info" routerLink="/clanCreate" routerLinkActive="active">Create</button>
+</div>

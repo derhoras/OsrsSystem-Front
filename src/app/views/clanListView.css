@@ -1,0 +1,9 @@
+﻿body {
+}
+tr:nth-child(even) {
+    background-color: #CBC3E3;
+  }
+
+  tr:nth-child(odd) {
+    background-color: rgba(206, 159, 245, 0.85);
+  }
